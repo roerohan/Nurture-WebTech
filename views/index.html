@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta http-equiv="ScreenOrientation" content="autoRotate:disabled">
+  <meta name="description"
+    content="End hunger, achieve food security and improved nutrition, and promote sustainable agriculture.">
+
+  <title>Nurture</title>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+    integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous">
+  </script>
+
+  <link rel="icon" href="/static/images/favicon.png" type="image/x-icon">
+
+  <link href="https://fonts.googleapis.com/css?family=Nunito+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/static/css/style.css">
+  <link rel="stylesheet" href="/static/css/style-mobile.css" media="screen and (orientation: portrait)">
+
+  <style>
+    @keyframes blink {
+      0% {
+        opacity: .2;
+      }
+
+      20% {
+        opacity: 1;
+      }
+
+      100% {
+        opacity: .2;
+      }
+    }
+
+    .saving span {
+      animation-name: blink;
+      animation-duration: 1.4s;
+      animation-iteration-count: infinite;
+      animation-fill-mode: both;
+    }
+
+    .saving span:nth-child(2) {
+      animation-delay: .2s;
+    }
+
+    .saving span:nth-child(3) {
+      animation-delay: .4s;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <div style="width: 100vw; height: 100vh; overflow-y: hidden;" class="load">
+    <div
+      style="margin: auto; line-height: 100vh; text-align: center; font-family: 'Nunito Sans', sans-serif; font-weight: bold;font-size: 3rem; letter-spacing: 3px; color:rgba(255,10,0, 0.7)">
+      LOADING <span class="saving"><span>.</span>
+        <span>.</span>
+        <span>.</span></span></div>
+    <img src="/static/images/loading.gif" alt=""
+      style="position: absolute; top: 0; right: 0; bottom: 0; left: 0; margin: auto; max-width: 100vw;">
+
+  </div>
+
+  <div style="display: none;" class="main">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#home"><img src="/static/images/logo.png" alt=""></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="#home">HOME</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#aboutus">ABOUT US</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#services">SERVICES</a>
+          </li>
+          <li class="nav-item">
+            <a class="dropdown-item nav-link" href="#health-calc">HEALTH CALCULATORS</a>
+          </li>
+          <li class="nav-item">
+            <div class="nav-link dropdown" href="#health-calc">
+              <a class="more" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                MORE <i class="fa fa-angle-down"></i>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item nav-link" href="#health-facts">HEALTH TIPS</a>
+                <a class="dropdown-item nav-link" href="#faq">FAQ</a>
+              </div>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link bookapp" href="#bookapp">&nbsp;DONATE&nbsp;</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <hr>
+
+    <div style="position: absolute" id="home">
+      <div class="contain">
+        <img src="/static/images/background.jpg" alt="" class="decoration-img">
+
+        <div class="header">
+          <p>
+            LET'S BEGIN<br>
+            A HEALTHY<br>
+            JOURNEY,<br>
+            TOGETHER.
+          </p>
+          <img src="/static/images/land-m.png" alt="" class="land-m">
+          <button data-hash="bookapp" class="button get-started-m" type="button">GET STARTED <i
+              class="fa fa-angle-right"></i></button>
+        </div>
+      </div>
+    </div>
+
+    <div class="bottomText">
+      <div class="bottomT">Managing your health can prove daunting<span class="remove-mobile">, between understanding
+          your health and actually doing the work</span>.</div>
+      <div class="topT">Let us conquer this task together.</div>
+      <button data-hash="bookapp" class="button get-started" type="button"><span class="get-start-text">GET STARTED <i
+            class="fa fa-angle-right"></i></span></button>
+    </div>
+    <div class="bottomArrowContainer">
+      <a class="bottomArrow" onclick="createDynamicURL()">
+        <i class="fa fa-angle-down"></i>
+      </a>
+    </div>
+
+    <div class="empty-space" id="aboutus"></div>
+    <div class="about-contain">
+      <div class="about">
+        <hr>
+        <div class="spaciousText">About Us</div>
+      </div>
+
+      <img src="/static/images/about.png" alt="" class="about-image">
+
+      <div class="about-content">
+        <div class="spaciousText">Nurture</div>
+        <p class="about-text">
+          We at Nurture aim not only to provide improved nutrition for all, but also promote sustainable growth for agriculture.
+          Our main goal is to serve people their right to clean food and proper nutrition, improve food security and help promote
+          healthy habits which will last lifelong.<br><br>
+
+          Support Nurture with your valuable donations! Remember, every penny counts.
+        </p>
+
+        <button class="bookapp button" data-hash="bookapp" type="button">&nbsp;DONATE&nbsp;</button>
+      </div>
+    </div>
+
+    <div class="empty-space" id="services"></div>
+    <hr>
+
+    <div class="services">
+      <div class="spaciousText">Services</div>
+      <div class="services-img">
+        <img src="/static/images/services.png">
+      </div>
+      <div class="services-img-m">
+        <img src="/static/images/services-m.png" alt="">
+      </div>
+    </div>
+
+    <div class="empty-space" id="health-calc"></div>
+    <hr>
+    <div class="health-calc">
+      <div class="spaciousText">Health Calculators</div>
+      <div class="topT">Know your body better.</div>
+
+      <div class="health-calc-container">
+        <img src="/static/images/calculators.png" alt="" class="calc">
+        <img src="/static/images/calculators-m.png" alt="" class="calc-m">
+
+        <div class="health-calc-content">
+          <div class="wi">
+            <button class="btn" data-toggle="modal" data-target="#waterIntake"><i class="fa fa-tint"></i> Water
+              Intake</button>
+            <div class="text">
+              Approximate amount of water you<br>
+              need to consume.
+            </div>
+          </div>
+          <div class="iw">
+            <button class="btn" data-toggle="modal" data-target="#idealWeight"><img src="/static/images/weight-solid.png">
+              Ideal Weight</button>
+            <div class="text">
+              Estimate ideal healthy bodyweight based on age, gender, height.
+            </div>
+          </div>
+          <div class="bmi" data-toggle="modal" data-target="#bodyMassIndex">
+            <button class="btn"><i class="fa fa-child"></i> BMI</button>
+            <div class="text">
+              Body mass index is a measure of body fat based on your height and weight.
+            </div>
+          </div>
+          <div class="bmr" data-toggle="modal" data-target="#basalMetabolicRate">
+            <button class="btn"><i class="fa fa-bolt"></i> BMR</button>
+            <div class="text">
+              Basal Metabolic Rate is the amount of energy expended while at rest.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Water Intake -->
+      <div class="modal fade" id="waterIntake" tabindex="-1" role="dialog" aria-labelledby="waterIntakeTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title pl-4" id="waterIntakeTitle">Water Intake</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body pl-4">
+              <input class="mb-3 mt-2 pl-3" name="weight" type="text" id="WI-weight" placeholder="Weight (kg)"><br>
+              <input class="mb-3 mt-2 pl-3" name="duration" type="text" id="WI-duration"
+                placeholder="Duration of Workout (min)"><br>
+              <input class="mb-3 mt-2" type="submit" value="Calculate" onclick="calcWI()">
+              <div class="result-WI"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ideal Weight -->
+
+      <div class="modal fade" id="idealWeight" tabindex="-1" role="dialog" aria-labelledby="idealWeightTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header pl-4">
+              <h5 class="modal-title" id="idealWeightTitle">Ideal Weight</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body pl-4">
+              <label for="sex">Sex: </label>
+              <input class="mb-3 mt-2" type="radio" name="sex" value="M"> Male
+              <input class="mb-3 mt-2" type="radio" name="sex" value="F"> Female<br>
+              <input class="mb-3 mt-2 pl-3" type="text" id="IW-height" placeholder="Height (cm)"><br>
+              <input class="mb-3 mt-2" type="submit" value="Calculate" onclick="calcIW()">
+              <div class="result-IW"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- BMI -->
+
+      <div class="modal fade" id="bodyMassIndex" tabindex="-1" role="dialog" aria-labelledby="bodyMassIndexTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header pl-4">
+              <h5 class="modal-title" id="bodyMassIndexTitle">Body Mass Index</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body pl-4">
+              <input class="mb-3 mt-2 pl-3" name="weight" type="text" id="BMI-weight" placeholder="Weight (kg)"><br>
+              <input class="mb-3 mt-2 pl-3" name="duration" type="text" id="BMI-height" placeholder="Height (cm)"><br>
+              <input class="mb-3 mt-2" type="submit" value="Calculate" onclick="calcBMI()">
+              <div class="result-BMI"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- BMR -->
+      <div class="modal fade" id="basalMetabolicRate" tabindex="-1" role="dialog"
+        aria-labelledby="basalMetabolicRateTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header pl-4">
+              <h5 class="modal-title" id="basalMetabolicRateTitle">Basal Metabolic Rate</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body pl-4">
+              <input class="mb-3 mt-2 pl-3" type="text" name="age" id="BMR-age" placeholder="Age"><br>
+              <label for="BMR-sex">Sex: </label>
+              <input type="radio" name="BMR-sex" value="M">Male
+              <input class="mb-3 mt-2" type="radio" name="BMR-sex" value="F">Female<br>
+              <input class="mb-3 mt-2 pl-3" name="weight" type="text" id="BMR-weight" placeholder="Weight (kg)"><br>
+              <input class="mb-3 mt-2 pl-3" name="duration" type="text" id="BMR-height" placeholder="Height (cm)"><br>
+              <input class="mb-3 mt-2" type="submit" value="Calculate" onclick="calcBMR()">
+              <div class="result-BMR"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="empty-space" id="health-facts"></div>
+    <hr>
+
+    <div class="health-facts">
+      <div class="spaciousText">Health Tips</div>
+      <div class="topT">Apply the Science of Nutrition</div>
+      <div class="health-facts-container">
+        <div class="health-facts-content">
+          <img src="/static/images/health-facts.jpg" alt="" class="health-facts-img">
+          <img src="/static/images/health-facts-m.jpg" alt="" class="health-facts-img-m">
+          <div class="card">
+            <div class="card-body">
+              <strong>1. Optimism may help you live longer</strong> <br><br>
+
+              Can seeing the glass half full help you live longer? Studies have found that there is a correlation
+              between increasing levels of optimism with decreasing levels of death from cancer, disease, infection
+              and stroke. This is particularly true for cases of cardiovascular disease. Those that had the highest
+              levels of optimism had an almost 40% lower risk of heart disease.
+
+              <div class="ques-seperator">
+                <div class="sep-line"></div>
+              </div>
+
+              <strong>2. Bananas can help improve your mood</strong> <br><br>
+
+              A banana has approximately 30% of your daily recommended intake of vitamin B6. Vitamin B6 helps the
+              brain produce serotonin, which is considered a mood stabilizer. Serotonin impacts your motor skills and
+              emotions. It is also the chemical that helps you sleep and digest food. Eating a banana can help relieve
+              depression and anxiety by stimulating the serotonin levels in your body.
+
+              <div class="ques-seperator">
+                <div class="sep-line"></div>
+              </div>
+
+              <strong>3. Cold temperature can be good for your health <br><br></strong>
+
+              If you live in Canada, you know all about cold weather. But did you know that colder temperatures can
+              benefit your health? Colder temperatures may help reduce allergies and inflammation and research has
+              shown that it can help you think more clearly and perform daily tasks better. The cold can also help
+              lower the risk of disease; mosquitoes that carry diseases such as Zika, West Nile virus and malaria are
+              not around during the winter season.
+
+              <div class="ques-seperator">
+                <div class="sep-line"></div>
+              </div>
+
+              <strong>4. If you are tired, exercise will help</strong> <br><br>
+
+              If you are physically tired, the best thing to do is exercise as it will give you more energy than
+              sitting. Studies have found that the blood and oxygen flow through the body will give you more energy
+              and improve your mood. The increase in endorphin levels can contribute to a feeling of well-being.
+
+              <div class="ques-seperator">
+                <div class="sep-line"></div>
+              </div>
+
+              <strong>5. Cholesterol-free can be bad for your cholesterol</strong> <br><br>
+
+              Food labels may say that it is cholesterol-free, however, that does not mean that the food is good for
+              your cholesterol levels. Trans fats, which are cholesterol-raising, naturally have no cholesterol but
+              can be detrimental to your cholesterol levels. Trans fats can be found in many fried foods and baked
+              goods. Trans fat, such as partially hydrogenated vegetable oils, and saturated fats are not good for
+              your cholesterol levels and should be avoided as much as possible. <br><br>
+
+              <div class="ques-seperator">
+                <div class="sep-line"></div>
+              </div>
+
+              <strong>6. Eat a variety of foods</strong> <br><br>
+
+              For good health, we need more than 40 different nutrients, and no single food can supply them all. It is
+              not about a single meal, it is about a balanced food choice over time that will make a difference!
+              <br><br>
+              A high-fat lunch could be followed by a low-fat dinner.<br>
+              After a large meat portion at dinner, perhaps fish should be the next day’s choice?<br><br>
+
+              <div class="ques-seperator">
+                <div class="sep-line"></div>
+              </div>
+
+              <strong>7. Enjoy plenty of fruits and vegetables</strong> <br><br>
+
+              Fruits and vegetables are among the most important foods for giving us enough vitamins, minerals and
+              fibre. We should try to eat at least 5 servings a day. For example, a glass of fresh fruit juice at
+              breakfast, perhaps an apple and a piece of watermelon as snacks, and a good portion of different
+              vegetables at each meal. <br><br>
+
+              <div class="ques-seperator">
+                <div class="sep-line"></div>
+              </div>
+
+              <strong>8. Drink plenty of fluids</strong> <br><br>
+
+              Adults need to drink at least 1.5 litres of fluid a day! Or more if it's very hot or they are physically
+              active. Water is the best source, of course, and we can use tap or mineral water, sparkling or
+              non-sparkling, plain or flavoured. Fruit juices, tea, soft drinks, milk and other drinks, can all be
+              okay - from time to time.<br><br>
+
+              <div class="ques-seperator">
+                <div class="sep-line"></div>
+              </div>
+
+              <strong>9. Replace saturated with unsaturated fat</strong> <br><br>
+
+              Fats are important for good health and proper functioning of the body. However, too much of it can
+              negatively affect our weight and cardiovascular health. Different kinds of fats have different health
+              effects, and some of these tips could help us keep the balance right:
+              <br><br>
+              <ul>
+                <li>We should limit the consumption of total and saturated fats (often coming from foods of animal
+                  origin),
+                  and completely avoid trans fats; reading the labels helps to identify the sources.</li>
+                <li>Eating fish 2-3 times a week, with at least one serving of oily fish, will contribute to our right
+                  intake of unsaturated fats.</li>
+                <li>When cooking, we should boil, steam or bake, rather than frying, remove the fatty part of meat,
+                  use
+                  vegetable oils.</li>
+              </ul><br>
+
+              <div class="ques-seperator">
+                <div class="sep-line"></div>
+              </div>
+
+              <strong>10. Start now! And keep changing gradually.</strong> <br><br>
+
+              Gradual changes in our lifestyle are easier to maintain than major changes introduced all at once. For
+              three days, we could write down the foods and drinks we consume throughout the day, and make a note of
+              the amount of movement we made. It won’t be difficult to spot where we could improve:
+              <br><br>
+              <ul>
+                <li>
+                  Skipping breakfast? A small bowl of muesli, a piece of bread or fruit, could help slowly introduce it
+                  into our routine</li>
+                <li>Too few fruits and vegetables? To start with, we can introduce one extra piece a day.</li>
+                <li>Favourite foods high in fat? Eliminating them abruptly could fire back, and make us return to the
+                  old
+                  habits. We can choose low fat options instead, eat them less frequently, and in smaller portions.</li>
+                <li>Too little activity? Using the stairs daily could be a great first move.</li>
+              </ul><br>
+            </div>
+          </div>
+        </div>
+        <hr>
+      </div>
+    </div>
+
+    <div class="empty-space" id="faq"></div>
+    <hr>
+
+    <div class="faq">
+      <div class="spaciousText">FAQ</div>
+      <div class="topT">How can we help you?</div>
+      <div class="faq-container">
+        <div class="faq-content">
+          <img src="/static/images/faq.png" alt="" class="faq-img">
+          <img src="/static/images/faq-m.png" alt="" class="faq-img-m">
+          <div class="card">
+            <div class="card-body">
+
+              <b>Q.</b>
+              <div class="questions">
+                From which foods can we get carbohydrates?
+              </div>
+              <div class="small-space"></div>
+              <b>A.</b>
+              <div class="questions">Milk products and fruits, whole grain breads and cereals, table
+                sugar, starchy vegetables, and legumes. Carbohydrates are called "simple" or "complex," depending on
+                how
+                fast your body digests and absorbs the sugar. You get simple carbohydrates from fruits, milk products,
+                and
+                table sugar. Complex carbohydrates include whole grain breads and cereals, starchy vegetables, and
+                legumes.</div>
+
+              <div class="ques-seperator">
+                <div class="sep-line"></div>
+              </div>
+            </div>
+
+            <b>Q.</b>
+            <div class="questions">
+              How much water should we drink in a day?
+            </div>
+            <div class="small-space"></div>
+            <b>A.</b>
+            <div class="questions">
+              Generally, nutritionists recommend we follow the “8x8” rule, which is to drink eight 8-ounce glasses
+              of
+              water per day. Drinking more water does indeed boost metabolism - especially if your glass is icy
+              cold.
+              Your body must work to warm the water up, burning a few extra calories in the process. As for other
+              benefits of water, 85% of your brain tissue is water, which means that if you're dehydrated, both your
+              body and your mind will be stressed.
+            </div>
+
+            <div class="ques-seperator">
+              <div class="sep-line"></div>
+            </div>
+
+            <b>Q.</b>
+            <div class="questions">
+              People with a body mass index (BMI) value of what or more are considered obese?
+            </div>
+            <div class="small-space"></div>
+            <b>A.</b>
+            <div class="questions">
+              30. BMI values between 18.5 and 24.9 are considered to be a “normal” or “healthy” weight. BMI values
+              between 25 and 29.9 are considered “overweight,” while BMI values of 30 and above are considered
+              “obese.”
+              BMIs above 25 are unhealthy and have been shown to increase the risk of certain chronic diseases. BMIs
+              under 18.5 are considered “underweight.”
+            </div>
+
+            <div class="ques-seperator">
+              <div class="sep-line"></div>
+            </div>
+
+            <b>Q.</b>
+            <div class="questions">
+              What is a "healthy diet"?
+            </div>
+            <div class="small-space"></div>
+            <b>A.</b>
+            <div class="questions">
+              A healthy eating pattern is one that provides enough of each essential nutrient from nutrient-dense
+              foods,
+              contains a variety of foods from all of the basic food groups, and focuses on balancing calories
+              consumed
+              with calories expended to help you achieve and sustain a healthy weight. This eating pattern limits
+              intake
+              of solid fats, sugar, salt (sodium) and alcohol. Create a healthy eating pattern to reduce the risk of
+              chronic diseases such as diabetes, cancer, and osteoporosis.
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <hr>
+    </div>
+  </div>
+
+  <div class="empty-space" id="bookapp"></div>
+  <hr>
+
+  <div class="book-appoint">
+    <div class="spaciousText">Donate for Good</div>
+    <div class="book-appt-container">
+      <img src="/static/images/book.png" alt="">
+      <div class="card book-appt-content donate-card">
+        <button class="contact-email" onclick="replaceCard()">Donate</button>
+        <div class="contact-name"><i class="fa fa-user"></i> Nurture</div>
+        <a class="contact-phone" href="tel:+919831191518"><i class="fa fa-phone"></i> +91 7980619447</a>
+        <div class="contact-address"><i class="fa fa-building"></i> Vellore Institute of Technology,<br>Tamil Nadu - 632014</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="footer-content">
+      <ul class="links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#aboutus">About Us</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#health-calc">Health Calculators</a></li>
+        <li><a href="#health-facts">Health Tips</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+      <img src="/static/images/leaves.png" alt="" class="leaves">
+      <img src="/static/images/logo.png" alt="" class="nurture" onclick="window.location.href='#home'">
+    </div>
+    <div class="branding">Made with &nbsp;<img src="/static/images/favicon.png"> by <a href="https://github.com/roerohan"
+        target="none"><u>roerohan</u></a>.
+    </div>
+  </div>
+
+</body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="/static/javascript/index.js"></script>
+<script src="/static/javascript/calculators.js"></script>
+
+<script>
+  $(window).on('load', () => {
+    setTimeout(() => {
+      $(".load").hide();
+      $(".main").fadeIn();
+      $(".main").show();
+    }, 500);
+  });
+</script>
+
+</html>
