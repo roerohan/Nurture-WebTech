@@ -113,8 +113,13 @@ function replaceCard() {
     $(".donate-card").html(donationForm);
 }
 
-function validate(field, query) {
+function validate() {
+    const phone = $("#phone").val();
     var xmlhttp = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP");
+
+    xmlhttp.open("POST", "/validate", true);
+    xmlhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
     xmlhttp.onreadystatechange = function () {
         const field = $(".error-msg");
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
@@ -123,8 +128,5 @@ function validate(field, query) {
             field.html("Error Occurred. Please reload.");
         }
     }
-    xmlhttp.open("POST", "/validate", true);
-    xmlhttp.send({
-        phone: $("#phone").val()
-    });
+    xmlhttp.send(encodeURI(`phone=${phone}`));
 }

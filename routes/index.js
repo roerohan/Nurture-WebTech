@@ -28,7 +28,7 @@ router.post('/donate', async (req, res) => {
 
 router.post('/validate', async (req, res) => {
     var re = /^[6789]{2}\d{8}$/;
-    if (!(re.test(req.body.phone)))
+    if (!(re.test(Number(req.body.phone))))
         res.json('Invalid Contact No.');
     else
         res.send('');
